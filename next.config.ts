@@ -1,7 +1,5 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
-};
-
-export default nextConfig;
+module.exports = {
+  images: {
+    domains: ['assets.aceternity.com', "api.microlink.io", "images.unsplash.com", "cdn.britannica.com"],
+  },
+}
