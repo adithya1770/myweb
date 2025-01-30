@@ -5,26 +5,27 @@ import { LinkPreview } from "../components/ui/link-preview";
 
 export default function LinkPreviewDemo() {
   return (
-    <div className="flex justify-center bg-black h-screen items-center  flex-col px-4">
+    <div className="flex justify-center bg-black h-screen items-center flex-col px-4">
       <p className="text-neutral-500 dark:text-neutral-400 text-xl md:text-3xl max-w-3xl mx-auto mb-10">
-        <LinkPreview url="https://tailwindcss.com" className="font-bold text-white">
-          Tailwind CSS
+        I am available on{" "}
+        <LinkPreview url="https://github.com/adithya1770" className="font-bold text-white">
+          Github
         </LinkPreview>{" "}
         and{" "}
-        <LinkPreview url="https://framer.com/motion" className="font-bold text-white">
-          Framer Motion
+        <LinkPreview url="https://www.linkedin.com/in/adithyaps929/" className="font-bold text-white">
+          Linkedin.
         </LinkPreview>{" "}
-        are a great way to build modern websites.
+        and i can't be found on any other platform. {";}"}
       </p>
       <p className="text-neutral-500 dark:text-neutral-400 text-xl md:text-3xl max-w-3xl mx-auto">
-        Visit{" "}
+        Visit my old portfolio{" "}
         <LinkPreview
-          url="https://ui.aceternity.com"
+          url="https://projectpathways.vercel.app/"
           className="font-bold bg-clip-text text-transparent bg-gradient-to-br from-purple-500 to-pink-500"
         >
-          Aceternity UI
+          ProjectPathways
         </LinkPreview>{" "}
-        for amazing Tailwind and Framer Motion components.
+        to know about my journey.
       </p>
     </div>
   );

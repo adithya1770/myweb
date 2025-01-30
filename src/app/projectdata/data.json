@@ -1,44 +1,58 @@
 [
     {
+        "key":1,
         "repo_name": "Doorsmash",
         "repo_link": "https://github.com/adithya1770/doorsmash",
         "repo_desc": "Minimalistic gaming supplies app which focuses on easy accessibilty",
-        "image": null
+        "image1": null,
+        "image2": null
     },
     {
+        "key":2,
         "repo_name": "Dashy",
         "repo_link": "https://github.com/adithya1770/dashy-web.git",
         "repo_desc": "A web dashboard which displays various info from browser and includes a note taker",
-        "image": null
+        "image1": "/dashy.png",
+        "image2": "/dashy2.png"
     },
     {
+        "key":3,
         "repo_name": "Farmy",
         "repo_link": "https://github.com/adithya1770/learn-react",
         "repo_desc": "Farmers dashboard which is very eaasy to use and is multifunctional",
-        "image": null
+        "image1": "",
+        "image2": ""
     },
     {
+        "key":4,
         "repo_name": "OpenMath",
         "repo_link": "https://github.com/adithya1770/sceptix-webapp",
-        "repo_desc": "A scientific calculatot which can do much more",
-        "image": null
+        "repo_desc": "A scientific calculator which can do much more",
+        "image1": "",
+        "image2": ""
     },
     {
+        "key":5,
         "repo_name": "MovieMern",
         "repo_link": "https://github.com/adithya1770/movie-mern",
         "repo_desc": "A simple Movies Info API which has CRUD Operations.",
-        "image": null
+        "image1": "",
+        "image2": ""
     },
     {
+        "key":6,
         "repo_name": "ALU Simulator",
         "repo_link": "https://github.com/adithya1770/projectX",
         "repo_desc": "Simulating a 8-bit Central Processing Unit in C Language",
-        "image": null
+        "image1": "",
+        "image2": ""
     },
     {
+        "key":7,
         "repo_name": "PyTools",
         "repo_link": "https://github.com/adithya1770/pytools",
         "repo_desc": "A simple and lightweight command-line utility tool with crazy functions",
-        "image": null
+        "image1": "",
+        "image2": ""
     }
 ]

@@ -5,10 +5,10 @@ export default function AnimatedTestimonialsDemo() {
   const testimonials = [
     {
       quote:
-        "The attention to detail and innovative features have completely transformed our workflow. This is exactly what we've been looking for.",
-      name: "Sarah Chen",
-      designation: "Product Manager at TechFlow",
-      src: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=3560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "I'm a passionate computer science student with a strong interest in web and app development. Skilled in languages like Python, JavaScript, C, and Java, they enjoy building projects that bridge the gap between software and real-world applications. Adithya has worked on a variety of exciting projects, including a gaming supplies e-commerce website, a farmers' portal, and several mobile apps using React Native. Always eager to learn and tinker with new technologies, they enjoy tackling challenges and creating solutions that are both functional and innovative.",
+      name: "Adithya P S",
+      designation: "Computer Science Student",
+      src: "/main.jpg",
     }
   ];
   return(
