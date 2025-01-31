@@ -20,7 +20,7 @@ export default function AnimatedPinDemo() {
       <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Julius+Sans+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Prata&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"></link>
       <h1 className="text-white absolute top-10 text-8xl bebas-neue-regular">Projects</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mt-44 gap-8">
-        {data.map((item, index) => (
+        {data.map((item: {repo_link: string, repo_name: string, repo_desc: string, image1: string, image2: string}, index) => (
           <div key={index} className="flex justify-center mt-4 mb-20">
             <PinContainer title="Visit the Github Repo" href={item.repo_link}>
               <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 w-[20rem] h-[25rem]">

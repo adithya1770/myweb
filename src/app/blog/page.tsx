@@ -30,7 +30,7 @@ const DummyContent = () => {
             className="bg-[#F5F5F7] dark:bg-neutral-800 p-8 md:p-14 rounded-3xl mb-4"
           >
             <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto">
-            As I kept exploring, I realized that every new technology builds upon the fundamentals. Concepts that once seemed overwhelming started making sense with practice. I began experimenting with JavaScript, then moved on to frameworks like React and backend technologies like Node.js. With each project, I pushed myself to try something new—whether it was integrating databases, optimizing performance, or building full-stack applications. The more I coded, the more I understood that learning isn’t about memorizing everything at once but about applying knowledge step by step. Now, coding feels less like a task and more like an exciting challenge that keeps me motivated every day.
+            As I kept exploring, I realized that every new technology builds upon the fundamentals. Concepts that once seemed overwhelming started making sense with practice. I began experimenting with JavaScript, then moved on to frameworks like React and backend technologies like Node.js. With each project, I pushed myself to try something new—whether it was integrating databases, optimizing performance, or building full-stack applications. The more I coded, the more I understood that learning isn&apos;t about memorizing everything at once but about applying knowledge step by step. Now, coding feels less like a task and more like an exciting challenge that keeps me motivated every day.
             </p>
             <Image
               src="https://www.pngkey.com/png/detail/214-2146391_web-development-icon-png.png"
@@ -59,7 +59,7 @@ const DummyContent2 = () => {
               <span className="font-bold text-neutral-700 dark:text-neutral-200">
                 Coding Quirky projects is not easy, even if the idea seems implementable!!
               </span>{" "}
-              Coding daily and building quirky projects is how I keep learning and experimenting. I enjoy taking unconventional ideas—whether it's a CLI tool, a smart automation, or a unique web app—and turning them into working projects using simple, effective code. I break things down, start with basic constructs, and refine as I go. My focus isn't just on completing projects but on exploring new tech, testing creative solutions, and making coding an everyday habit. Whether it's React, C, or a random Linux experiment, I love tinkering, breaking, and improving—one project at a time.
+              Coding daily and building quirky projects is how I keep learning and experimenting. I enjoy taking unconventional ideas—whether it&apos;s a CLI tool, a smart automation, or a unique web app—and turning them into working projects using simple, effective code. I break things down, start with basic constructs, and refine as I go. My focus isn&apos;t just on completing projects but on exploring new tech, testing creative solutions, and making coding an everyday habit. Whether it&apos;s React, C, or a random Linux experiment, I love tinkering, breaking, and improving—one project at a time.
             </p>
             <Image
               src="https://higherinquietude.wordpress.com/wp-content/uploads/2014/07/intel_lynnfield_die2.jpg?w=1400"

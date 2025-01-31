@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useRef, useEffect } from "react";
+import React from "react";
 import { LayoutGrid } from "../components/ui/layout-grid";
 import '../web.css'
 
@@ -48,7 +48,7 @@ const SkeletonThree = () => {
       </p>
       <p className="font-normal text-base text-white"></p>
       <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-        Couldn't enjoy life.
+        Couldn&apos;t enjoy life.
       </p>
     </div>
   );

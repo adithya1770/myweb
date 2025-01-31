@@ -27,7 +27,7 @@ export default function LinkPreviewDemo() {
         <LinkPreview url="https://www.linkedin.com/in/adithyaps929/" className="font-bold text-lime-600">
           Linkedin,
         </LinkPreview>{" "}
-        and i can't be found on any other platform. {";}"}
+        and i can&apos;t be found on any other platform. {";}"}
       </p>
       <p className="text-neutral-500 dark:text-neutral-400 text-xl md:text-3xl max-w-3xl mx-auto">
         Visit my old portfolio{" "}
