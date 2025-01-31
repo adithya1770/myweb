@@ -4,8 +4,8 @@
         "repo_name": "Doorsmash",
         "repo_link": "https://github.com/adithya1770/doorsmash",
         "repo_desc": "Minimalistic gaming supplies app which focuses on easy accessibilty",
-        "image1": null,
-        "image2": null
+        "image1": "/dd.jpg",
+        "image2": "/dd2.jpg"
     },
     {
         "key":2,
@@ -20,39 +20,39 @@
         "repo_name": "Farmy",
         "repo_link": "https://github.com/adithya1770/learn-react",
         "repo_desc": "Farmers dashboard which is very eaasy to use and is multifunctional",
-        "image1": "",
-        "image2": ""
+        "image1": "/farmy.png",
+        "image2": "/farmy2.png"
     },
     {
         "key":4,
         "repo_name": "OpenMath",
         "repo_link": "https://github.com/adithya1770/sceptix-webapp",
         "repo_desc": "A scientific calculator which can do much more",
-        "image1": "",
-        "image2": ""
+        "image1": "/openmath.png",
+        "image2": "/openmath2.png"
     },
     {
         "key":5,
         "repo_name": "MovieMern",
         "repo_link": "https://github.com/adithya1770/movie-mern",
         "repo_desc": "A simple Movies Info API which has CRUD Operations.",
-        "image1": "",
-        "image2": ""
+        "image1": "/mm.png",
+        "image2": "/mm2.png"
     },
     {
         "key":6,
         "repo_name": "ALU Simulator",
         "repo_link": "https://github.com/adithya1770/projectX",
         "repo_desc": "Simulating a 8-bit Central Processing Unit in C Language",
-        "image1": "",
-        "image2": ""
+        "image1": "/alu.png",
+        "image2": "/alu2.png"
     },
     {
         "key":7,
         "repo_name": "PyTools",
         "repo_link": "https://github.com/adithya1770/pytools",
         "repo_desc": "A simple and lightweight command-line utility tool with crazy functions",
-        "image1": "",
-        "image2": ""
+        "image1": "/pt.png",
+        "image2": "/pt2.png"
     }
 ]

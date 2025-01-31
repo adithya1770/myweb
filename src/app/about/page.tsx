@@ -1,5 +1,6 @@
 import { div } from "motion/react-client";
 import { AnimatedTestimonials } from "../components/ui/animated-testimonials";
+import "../web.css";
 
 export default function AnimatedTestimonialsDemo() {
   const testimonials = [
