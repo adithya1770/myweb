@@ -23,8 +23,9 @@ const page = () => {
         </p>
       </Vortex>
     </div>
-    <div className='text-3xl ml-36 lg:mt-2 mt-10 lg:ml-170'>
-      <a href="/gallery">Gallery</a>
+    <div className='text-3xl ml-36 lg:mt-2 mt-10 lg:ml-160'>
+      <a href="/gallery" className='mr-14 hover:text-purple-400'>Gallery</a>
+      <a href="/feeder" className='hover:text-purple-400'>PING ME!</a>
     </div>
     </div>
     
