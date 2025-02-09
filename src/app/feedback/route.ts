@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import feedBack from "./feedSchema";
 import mongoose from "mongoose";
 
-export async function POST(request: any) {
+export async function POST(request: Request) {
     const headers = new Headers();
     headers.append("Access-Control-Allow-Origin", "*");
     headers.append("Access-Control-Allow-Methods", "POST, GET, OPTIONS");
@@ -17,7 +17,7 @@ export async function POST(request: any) {
         await feedBack.create(newObj);
         return NextResponse.json({"message": "Uploaded!"}, { status: 200, headers });
     }
-    catch(error){
+    catch{
         return NextResponse.json({"message": "Couldn't Send"}, { status: 400, headers });
     }
 }
