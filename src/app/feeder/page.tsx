@@ -51,14 +51,14 @@ export default function SignupFormDemo() {
           duration: 0.8,
           ease: "easeInOut",
         }}
-        className="relative flex flex-col gap-4 items-center justify-center px-4"
+        className="relative flex flex-col gap-4 items-center justify-center px-10"
       >
-    <div className="mt-48 mb-10 max-w-md w-full fira-code-500 mx-auto rounded-2xl md:rounded-2xl p-4 md:p-8 shadow-input bg-black dark:bg-black">
+    <div className="mt-1 mb-10 max-w-md w-full fira-code-500 mx-auto rounded-2xl md:rounded-2xl p-4 md:p-8 shadow-input bg-black dark:bg-black">
       <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Julius+Sans+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Prata&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"></link>
       <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Julius+Sans+One&family=Prata&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"></link>
       <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fira+Code:wght@300..700&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Julius+Sans+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Prata&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"></link>
-      <h2 className="font-bold text-4xl text-white dark:text-neutral-200">
-        Like my Work? Want to Connect?
+      <h2 className="font-bold text-2xl text-white dark:text-neutral-200">
+        Like my Work? Want to Connect or Send Appreciation?
       </h2>
       <p className="text-neutral-600 text-md fira-code-500 max-w-sm mt-2 dark:text-neutral-300">
         Send a message to me here! {"("}I shall personally see it{")"}
@@ -86,7 +86,8 @@ export default function SignupFormDemo() {
       </form>
       <p className="text-white ml-1">{message}</p>
     </div>
-      <InfiniteMovingCards
+    </motion.div>
+    <InfiniteMovingCards
         items={[
           ...data.map((item: { name: string; comment: string}) => ({
             name: item.name,
@@ -96,8 +97,8 @@ export default function SignupFormDemo() {
         direction="right"
         speed="slow"
       />
-    </motion.div>
     </AuroraBackground>
+    
   );
 }
 
