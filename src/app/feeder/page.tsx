@@ -88,7 +88,7 @@ export default function SignupFormDemo() {
     </div>
       <InfiniteMovingCards
         items={[
-          ...data.map((item: { name: string; comment: string, title: string }) => ({
+          ...data.map((item: { name: string; comment: string}) => ({
             name: item.name,
             quote: item.comment,
           })),
