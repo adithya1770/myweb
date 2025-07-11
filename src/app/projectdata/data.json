@@ -54,5 +54,13 @@
         "repo_desc": "A simple and lightweight command-line utility tool with crazy functions",
         "image1": "/pt.png",
         "image2": "/pt2.png"
+    },
+    {
+        "key":8,
+        "repo_name": "Analysis of Sound",
+        "repo_link": "https://github.com/adithya1770/analysis_of_sound.git",
+        "repo_desc": "Analyzing the speed of sound using an ultrasonic sensor and data manipulation",
+        "image1": "/schematic.png",
+        "image2": "/tvd-raw.png"
     }
 ]

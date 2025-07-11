@@ -5,7 +5,7 @@ import '../web.css';
 const page = () => {
   return (
     <div>
-      <Image alt="" width={550} height={800} src="/resume.png" className='ml-0 mt-24 lg:mt-0 lg:ml-128'/>
+      <iframe src="/resume.pdf" width="100%" className='h-170' style={{ border: 'none' }}/>
     </div>
   )
 }
