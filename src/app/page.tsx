@@ -2,8 +2,7 @@ import React from 'react'
 import Navbar from './components/navbar';
 import './web.css';
 import { Vortex } from "./components/ui/vortex";
-import { MacbookScroll } from "./components/ui/macbook-scroll";
-import Link from "next/link";
+import { siReact } from 'simple-icons/icons';
 
 const page = () => {
   return (
@@ -26,21 +25,23 @@ const page = () => {
       </Vortex>
     </div>
     <p className='text-white ml-36 lg:ml-168 mt-10'>Scroll down!</p>
-    <MacbookScroll
-        title={
-          <span className='text-white'>
-            Technologies I know so far! but I don&apos;t think this laptop can handle it!
-          </span>
-        }
-        badge={
-          <Link href="/blue.png">
-            <Badge className="h-10 w-10 transform -rotate-12" />
-          </Link>
-        }
-        src={`/blue.png`}
-        showGradient={false}
-      />
-    <div className='text-3xl ml-20 mb-6 lg:mt-40 lg:pt-72 lg:ml-160'>
+    <h1 className='lg:text-8xl lg:ml-80 lg:mt-20 ml-8 mt-2 text-3xl'>TECHNOLOGIES I KNOW SO FAR!</h1>
+    <div className="flex flex-wrap items-center justify-center lg:gap-4 lg:p-4 gap-2 p-10">
+    <img src="https://cdn.simpleicons.org/react" alt="React Icon" className="w-10 h-10" />
+    <img src="https://cdn.simpleicons.org/nodedotjs" alt="Node.js Icon" className="w-10 h-10" />
+    <img src="https://cdn.simpleicons.org/tailwindcss" alt="Tailwind CSS Icon" className="w-10 h-10" />
+    <img src="https://cdn.simpleicons.org/git" alt="Git Icon" className="w-10 h-10" />
+    <img src="https://cdn.simpleicons.org/python" alt="Python Icon" className="w-10 h-10" />
+    <img src="https://cdn.simpleicons.org/svelte" alt="Svelte Icon" className="w-10 h-10" />
+    <img src="https://cdn.simpleicons.org/c" alt="C Icon" className="w-10 h-10" />
+    <img src="https://cdn.simpleicons.org/cplusplus" alt="C++ Icon" className="w-10 h-10" />
+    <img src="https://cdn.simpleicons.org/r" alt="R Icon" className="w-10 h-10" />
+    <img src="https://cdn.simpleicons.org/css" alt="CSS3 Icon" className="w-10 h-10" />
+    <img src="https://cdn.simpleicons.org/html5" alt="HTML5 Icon" className="w-10 h-10" />
+    <img src="https://cdn.simpleicons.org/mongodb" alt="MongoDB Icon" className="w-10 h-10" />
+    <img src="https://cdn.simpleicons.org/mysql" alt="MySQL Icon" className="w-10 h-10" />
+  </div>
+    <div className='text-3xl ml-20 mb-6 lg:mt-2 lg:pt-2 lg:ml-160'>
       <a href="/gallery" className='mr-14 hover:text-purple-400'>Gallery</a>
       <a href="/feeder" className='hover:text-purple-400'>PING ME!</a>
     </div>

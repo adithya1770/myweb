@@ -1,141 +1,65 @@
 "use client";
 import React from "react";
-import { LayoutGrid } from "../components/ui/layout-grid";
-import '../web.css'
+import {
+  DraggableCardBody,
+  DraggableCardContainer,
+} from "../components/ui/draggable-card";
+import "./web.css";
 
-export default function LayoutGridDemo() {
+export default function DraggableCardDemo() {
+  const items = [
+    {
+      title: "LightSaber by the beach",
+      image: "/pic3.jpg",
+      className: "absolute top-10 left-[20%] rotate-[-5deg]",
+    },
+    {
+      title: "Crowded Church building",
+      image: "/pic1.jpg",
+      className: "absolute top-40 left-[25%] rotate-[-7deg]",
+    },
+    {
+      title: "Grumpy Old man",
+      image: "/pic6.jpg",
+      className: "absolute top-5 left-[40%] rotate-[8deg]",
+    },
+    {
+      title: "Hating Crowds",
+      image: "/pic5.jpg",
+      className: "absolute top-32 left-[55%] rotate-[10deg]",
+    },
+    {
+      title: "Technologie",
+      image: "/pic7.jpg",
+      className: "absolute top-20 right-[35%] rotate-[2deg]",
+    },
+    {
+      title: "Old Building",
+      image: "/pic8.jpg",
+      className: "absolute top-24 left-[45%] rotate-[-7deg]",
+    },
+  ];
+
   return (
-    <div className="h-screen w-full">
-        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Julius+Sans+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Prata&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"></link>
-        <h1 className="text-white lg:text-7xl text-5xl ml-32 mt-10 bebas-neue-regular">Gallery</h1>
-      <LayoutGrid cards={cards}/>
-    </div>
+    <DraggableCardContainer className="julius-sans-one-regular relative flex min-h-screen w-full items-center justify-center overflow-clip">
+      <link rel="preconnect" href="https://fonts.googleapis.com"></link>
+      <link rel="preconnect" href="https://fonts.gstatic.com"></link>
+      <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Doto:wght@100..900&family=Fira+Code:wght@300..700&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Jersey+10&family=Julius+Sans+One&family=Londrina+Shadow&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playwrite+MX+Guides&family=Prata&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"></link>
+      <p className="absolute top-1/2 mx-auto max-w-sm -translate-y-3/4 text-center text-2xl font-black text-neutral-400 md:text-4xl dark:text-neutral-800">
+        welcome to my vault of memories!
+      </p>
+      {items.map((item, idx) => (
+        <DraggableCardBody key={idx} className={item.className}>
+          <img
+            src={item.image}
+            alt={item.title}
+            className="pointer-events-none relative z-10 h-80 w-80 object-cover montserrat-400"
+          />
+          <h3 className="mt-4 text-center text-2xl font-bold text-neutral-700 dark:text-neutral-300">
+            {item.title}
+          </h3>
+        </DraggableCardBody>
+      ))}
+    </DraggableCardContainer>
   );
 }
-
-const SkeletonOne = () => {
-  return (
-    <div>
-      <p className="font-bold md:text-4xl text-xl text-white">
-        LightSaber by the beach
-      </p>
-      <p className="font-normal text-base text-white"></p>
-      <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-        A calm and serene place by the beach.
-      </p>
-    </div>
-  );
-};
-
-const SkeletonTwo = () => {
-  return (
-    <div>
-      <p className="font-bold md:text-4xl text-xl text-white">
-        Crowded Church building.
-      </p>
-      <p className="font-normal text-base text-white"></p>
-      <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-        Blends with the sky.
-      </p>
-    </div>
-  );
-};
-const SkeletonThree = () => {
-  return (
-    <div>
-      <p className="font-bold md:text-4xl text-xl text-white">
-        Grumpy Old man.
-      </p>
-      <p className="font-normal text-base text-white"></p>
-      <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-        Couldn&apos;t enjoy life.
-      </p>
-    </div>
-  );
-};
-const SkeletonFour = () => {
-  return (
-    <div>
-      <p className="font-bold md:text-4xl text-xl text-white">
-        Hating Crowds
-      </p>
-      <p className="font-normal text-base text-white"></p>
-      <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-        A very tranquil place ruined by the chaos.
-      </p>
-    </div>
-  );
-};
-
-const SkeletonFive = () => {
-    return (
-      <div>
-        <p className="font-bold md:text-4xl text-xl text-white">
-        technologie
-        </p>
-        <p className="font-normal text-base text-white"></p>
-        <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-          Pink Floyd and silicon
-        </p>
-      </div>
-    );
-  };
-
-  const SkeletonSix = () => {
-    return (
-      <div>
-        <p className="font-bold md:text-4xl text-xl text-white">
-        Old building
-        </p>
-        <p className="font-normal text-base text-white"></p>
-        <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-          Where i wander off in my free time.
-        </p>
-      </div>
-    );
-  };
-
-const cards = [
-  {
-    id: 1,
-    content: <SkeletonOne />,
-    className: "md:col-span-2",
-    thumbnail:
-      "/pic3.jpg",
-  },
-  {
-    id: 2,
-    content: <SkeletonTwo />,
-    className: "col-span-1",
-    thumbnail:
-      "/pic1.jpg",
-  },
-  {
-    id: 3,
-    content: <SkeletonThree />,
-    className: "col-span-1",
-    thumbnail:
-      "/pic6.jpg",
-  },
-  {
-    id: 4,
-    content: <SkeletonFour />,
-    className: "md:col-span-2",
-    thumbnail:
-      "/pic5.jpg",
-  },
-  {
-    id: 5,
-    content: <SkeletonFive />,
-    className: "md:col-span-2",
-    thumbnail:
-      "/pic7.jpg",
-  },
-  {
-    id: 6,
-    content: <SkeletonSix />,
-    className: "md:col-span-2",
-    thumbnail:
-      "/pic8.jpg",
-  }
-];
