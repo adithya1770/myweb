@@ -27,17 +27,16 @@ export default function LinkPreviewDemo() {
         <LinkPreview url="https://www.linkedin.com/in/adithyaps929/" className="font-bold text-lime-600">
           Linkedin,
         </LinkPreview>{" "}
-        and i can&apos;t be found on any other platform. {";}"}
+        and I can&apos;t be found on any other platform. {";}"}
       </p>
       <p className="text-neutral-500 dark:text-neutral-400 text-xl md:text-3xl max-w-3xl mx-auto">
-        Visit my old portfolio{" "}
-        <LinkPreview
-          url="https://projectpathways.vercel.app/"
+        Want to work together?{" "}
+        <a
+          href="mailto:adithyaps929@gmail.com"
           className="font-bold bg-clip-text text-transparent bg-gradient-to-br from-purple-500 to-pink-500"
         >
-          ProjectPathways
-        </LinkPreview>{" "}
-        to know about my journey.
+          Mail Me
+        </a>{" "}
       </p>
       </motion.h1>
       </LampContainer>
