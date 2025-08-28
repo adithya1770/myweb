@@ -70,5 +70,12 @@
         "repo_desc": "Implementing SLAM",
         "image1": "/slam1.png",
         "image2": "/slam2.jpg"
+    },
+    {
+        "key":10,
+        "repo_name": "owm.",
+        "repo_link": "https://github.com/adithya1770/owm_app.git",
+        "repo_desc": "optimised waste management system with enhanced attributes",
+        "image1": "/ss.jpg"
     }
 ]
