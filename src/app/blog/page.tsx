@@ -59,7 +59,7 @@ const DummyContent2 = () => {
               <span className="font-bold text-neutral-700 dark:text-neutral-200">
               revamping my projects and surge of informations!
               </span>{" "}
-              You take any project, it might be new or old, small or big doesn't matter revamping and rewriting them is a huge pain. I have always struggled with rewriting my old projects, when you have already thought that this project ends here but yet there is some scope for imporvement. ahh! painful right? That's exactly when you see the new version of this particular technology has new updates and lots of new features have been added, YES! you have to learn them all. (Happend to me! Had to relearn how to install tailwind.) 
+              You take any project, it might be new or old, small or big doesn&apos;t matter revamping and rewriting them is a huge pain. I have always struggled with rewriting my old projects, when you have already thought that this project ends here but yet there is some scope for imporvement. ahh! painful right&lsquo; That&apos;s exactly when you see the new version of this particular technology has new updates and lots of new features have been added, YES! you have to learn them all. (Happend to me! Had to relearn how to install tailwind.) 
             </p>
             <Image
               src="https://higherinquietude.wordpress.com/wp-content/uploads/2014/07/intel_lynnfield_die2.jpg?w=1400"

@@ -5,7 +5,6 @@ import { Label } from "../components/ui/labels";
 import { Input } from "../components/ui/input";
 import { cn } from "../lib/utils";
 import "../web.css";
-import { AuroraBackground } from "../components/ui/aurora-background";
 import { InfiniteMovingCards } from "../components/ui/infinite-moving-cards";
 
 export default function SignupFormDemo() {
