@@ -30,10 +30,10 @@ const DummyContent = () => {
             className="bg-[#F5F5F7] dark:bg-neutral-800 p-8 md:p-14 rounded-3xl mb-4"
           >
             <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto">
-            As I kept exploring, I realized that every new technology builds upon the fundamentals. Concepts that once seemed overwhelming started making sense with practice. I began experimenting with JavaScript, then moved on to frameworks like React and backend technologies like Node.js. With each project, I pushed myself to try something new—whether it was integrating databases, optimizing performance, or building full-stack applications. The more I coded, the more I understood that learning isn&apos;t about memorizing everything at once but about applying knowledge step by step. Now, coding feels less like a task and more like an exciting challenge that keeps me motivated every day.
+            If I had to summarize my internship experience in a single phrase, it would be technical exhilaration. I felt really overwhelmed by the facilities provided by the lab. The project I took up involved too many technical intricacies, so I had to seek help from a few mentors who were really kind and helpful. Even though I hit some roadblocks, the journey of finishing my project was smooth, and I was able to solve them. In a nutshell, it was a great learning experience that gave me many insights into robotics.
             </p>
             <Image
-              src="https://www.pngkey.com/png/detail/214-2146391_web-development-icon-png.png"
+              src="https://avatars.githubusercontent.com/u/3979232?s=280&v=4"
               alt="WebDev"
               height="500"
               width="500"
@@ -57,9 +57,9 @@ const DummyContent2 = () => {
           >
             <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto">
               <span className="font-bold text-neutral-700 dark:text-neutral-200">
-                Coding Quirky projects is not easy, even if the idea seems implementable!!
+              revamping my projects and surge of informations!
               </span>{" "}
-              Coding daily and building quirky projects is how I keep learning and experimenting. I enjoy taking unconventional ideas—whether it&apos;s a CLI tool, a smart automation, or a unique web app—and turning them into working projects using simple, effective code. I break things down, start with basic constructs, and refine as I go. My focus isn&apos;t just on completing projects but on exploring new tech, testing creative solutions, and making coding an everyday habit. Whether it&apos;s React, C, or a random Linux experiment, I love tinkering, breaking, and improving—one project at a time.
+              You take any project, it might be new or old, small or big doesn't matter revamping and rewriting them is a huge pain. I have always struggled with rewriting my old projects, when you have already thought that this project ends here but yet there is some scope for imporvement. ahh! painful right? That's exactly when you see the new version of this particular technology has new updates and lots of new features have been added, YES! you have to learn them all. (Happend to me! Had to relearn how to install tailwind.) 
             </p>
             <Image
               src="https://higherinquietude.wordpress.com/wp-content/uploads/2014/07/intel_lynnfield_die2.jpg?w=1400"
@@ -78,15 +78,15 @@ const DummyContent2 = () => {
 
 const data = [
   {
-    category: "Learning & Experiences",
-    title: "Learning JavaScript and MERN Stack",
-    src: "https://images.unsplash.com/photo-1593720219276-0b1eacd0aef4?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHdlYiUyMGRldmVsb3BlcnxlbnwwfHwwfHx8MA%3D%3D",
+    category: "Experiences",
+    title: "expreience at centre for system & design",
+    src: "/slam1.png",
     content: <DummyContent />,
   },
   {
     category: "Productivity",
-    title: "Coding Daily and Quirky Projects",
-    src: "https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187_3x4.jpg",
+    title: "revamp and surge",
+    src: "https://blueseatblogs.com/cdn-cgi/image/quality=80,format=auto,onerror=redirect,metadata=none/wp-content/uploads/2018/07/consciousness-709143.jpg",
     content: <DummyContent2 />,
   }
 ];
