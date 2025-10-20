@@ -40,14 +40,6 @@
         "image2": "/mm2.png"
     },
     {
-        "key":6,
-        "repo_name": "ALU Simulator",
-        "repo_link": "https://github.com/adithya1770/projectX",
-        "repo_desc": "Simulating a 8-bit Central Processing Unit in C Language",
-        "image1": "/alu.png",
-        "image2": "/alu2.png"
-    },
-    {
         "key":7,
         "repo_name": "PyTools",
         "repo_link": "https://github.com/adithya1770/pytools",
@@ -77,5 +69,13 @@
         "repo_link": "https://github.com/adithya1770/owm_app.git",
         "repo_desc": "optimised waste management system with enhanced attributes",
         "image1": "/ss.jpg"
+    },
+        {
+        "key":11,
+        "repo_name": "memry",
+        "repo_link": "https://github.com/adithya1770/memry.git",
+        "repo_desc": "it shows the memory operations between different memory blocks",
+        "image1": "/mem2.png",
+        "image2": "/mem3.png"
     }
 ]

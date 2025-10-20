@@ -37,10 +37,13 @@ export default {
 			input: `0px 2px 3px -1px rgba(0,0,0,0.1), 0px 1px 0px 0px rgba(25,28,33,0.02), 0px 0px 0px 1px rgba(25,28,33,0.08)`,
 		  },
   		spacing: {
+			'110': '24rem',
   			'120': '30rem',
   			'122': '31rem',
   			'128': '32rem',
   			'130': '34rem',
+			'132': '35rem',
+			'135': '39rem',
   			'160': '40rem',
   			'165': '43rem',
   			'168': '44rem',
