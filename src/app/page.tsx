@@ -1,18 +1,42 @@
+"use client"
 import React from 'react'
 import Navbar from './components/navbar';
 import './web.css';
 import SignupFormDemo from './feeder/page';
+import TextType from '../../components/ui/TextType';
+import Particles from '../components/Particles';
 
 const page = () => {
   return (
-    <div className='text-white bebas-neue-regular tracking-widest'>
+    <div className='text-white bebas-neue-regular tracking-widest relative min-h-screen'>
+        <div className="fixed inset-0 -z-10 top-0">
+            <Particles
+              className=""
+              particleColors={['#ffffff', '#ffffff']}
+              particleCount={200}
+              particleSpread={10}
+              speed={0.1}
+              particleBaseSize={100}
+              moveParticlesOnHover={true}
+              alphaParticles={false}
+              disableRotation={false}
+            />
+        </div>
       <Navbar/>
       <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Julius+Sans+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Prata&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"></link>
       <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Julius+Sans+One&family=Prata&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"></link>
       <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fira+Code:wght@300..700&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Julius+Sans+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Prata&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"></link>
       <div className="w-full mx-auto rounded-md mt-14 h-[30rem] overflow-hidden">
         <h2 className="text-white text-4xl mt-40 md:text-7xl font-bold text-center fira-code-500">
-          {"<"}adithya p s{" />"}
+          <TextType 
+              text={["<adithya p s/>"]}
+              typingSpeed={75}
+              pauseDuration={1500}
+              showCursor={true}
+              cursorCharacter="|"
+              variableSpeed={false}
+              onSentenceComplete={() => {}}
+            />
         </h2>
         <p className="text-white text-2xl lg:ml-120 lg:mt-10 md:text-3xl max-w-xl mt-6 text-center">
            Welcome to my digital realm, I am a developer passionate about web, apps, and everything tech.
@@ -39,7 +63,6 @@ const page = () => {
       <SignupFormDemo/>
     </div>
     </div>
-    
   )
 }
 
