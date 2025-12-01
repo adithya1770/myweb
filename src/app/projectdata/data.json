@@ -60,7 +60,8 @@
         "repo_name": "SLAM Demonstration",
         "repo_link": "https://github.com/adithya1770/nitk.git",
         "repo_desc": "Implementing SLAM",
-        "image1": "/slam1.png"
+        "image1": "/slam1.png",
+        "image2": "/car.jpeg"
     },
     {
         "key":10,
