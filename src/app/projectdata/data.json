@@ -77,5 +77,13 @@
         "repo_desc": "it shows the memory operations between different memory blocks",
         "image1": "/mem2.png",
         "image2": "/mem3.png"
+    },
+    {
+        "key":12,
+        "repo_name": "STiX Analysis Pipeline",
+        "repo_link": "https://github.com/adithya1770/stix_analyser_pipeline.git",
+        "repo_desc": "analyzing stix data and flagging vulnerabilities",
+        "image1": "/stix1.png",
+        "image2": "/stix4.png"
     }
 ]
