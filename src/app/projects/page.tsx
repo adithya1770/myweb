@@ -1,55 +1,159 @@
 "use client";
-import React, { useState } from "react";
-import { PinContainer } from "../components/ui/3d-pin";
-import Image from "next/image";
-import { useEffect } from "react";
-import '../web.css'
 
-export default function AnimatedPinDemo() {
-  const [data, setData] = useState([]);
+import { useEffect, useState } from "react";
+
+import Navbar from "@/components/layout/Navbar";
+import Container from "@/components/layout/Container";
+
+import Image from "next/image";
+
+interface Project {
+  repo_link: string;
+  repo_name: string;
+  repo_desc: string;
+  image1: string;
+}
+
+export default function ProjectsPage() {
+  const [projects, setProjects] = useState<Project[]>([]);
+
   useEffect(() => {
-    const dataReceiver = async () => {
-      const fetchedData = await fetch("/projectdata");
-      const receivedData = await fetchedData.json();
-      setData(receivedData);
-    }
-    dataReceiver();
-  }, [])
+    const fetchProjects = async () => {
+      const response = await fetch("/api/projects");
+
+      const data = await response.json();
+
+      setProjects(data);
+    };
+
+    fetchProjects();
+  }, []);
+
   return (
-    <div className="bg-black flex items-center justify-center">
-      <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Julius+Sans+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Prata&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"></link>
-      <h1 className="text-white absolute top-10 text-8xl bebas-neue-regular">Projects</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mt-44 gap-8">
-        {data.map((item: {repo_link: string, repo_name: string, repo_desc: string, image1: string, image2: string}, index) => (
-          <div key={index} className="flex justify-center mt-4 mb-20">
-            <PinContainer title="Visit the Github Repo" href={item.repo_link}>
-              <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 w-[20rem] h-[25rem]">
-                <h3 className="max-w-xs !pb-2 !m-0 font-bold text-3xl text-slate-100">
-                  {item.repo_name}
-                </h3>
-                <div className="text-base !m-0 !p-0 font-normal">
-                  <span className="text-slate-500">{item.repo_desc}</span>
-                </div>
-                <Image
-                  width={200}
-                  height={80}
-                  alt=""
-                  src={item.image1}
-                  className="rounded-lg mt-2 ml-12 bg-gradient-to-br"
-                />
-                <Image
-                  width={200}
-                  height={80}
-                  alt=""
-                  src={item.image2}
-                  className="rounded-lg mt-5 ml-12 bg-gradient-to-br"
-                />
-              </div>
-            </PinContainer>
+    <div className="min-h-screen overflow-x-hidden bg-black text-white">
+      <Navbar />
+
+      <div className="grid-background fixed inset-0 opacity-30" />
+
+      <main className="relative z-10 pt-28 pb-32">
+        <Container>
+          <div className="mb-20 max-w-4xl">
+            <div className="mb-5 flex items-center gap-3">
+              <div className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+
+              <p className="text-xs uppercase tracking-[0.35em] text-neutral-500">
+                things i've built
+              </p>
+            </div>
+
+            <h1
+              className="
+                text-5xl
+                font-bold
+                leading-[0.9]
+                tracking-[-0.06em]
+                text-white
+                md:text-7xl
+              "
+            >
+              Projects
+            </h1>
+
+            <p
+              className="
+                mt-8
+                max-w-2xl
+                text-base
+                leading-relaxed
+                text-neutral-400
+              "
+            >
+              Projects I built while learning technologies, experimenting with
+              ideas, rebuilding old systems, or randomly getting obsessed with
+              a concept for a week.
+            </p>
           </div>
-        ))}
-      </div>
+
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
+            {projects.map((project, index) => (
+              <div
+                key={index}
+                className="
+                  group
+                  overflow-hidden
+                  rounded-3xl
+                  border
+                  border-white/10
+                  bg-white/[0.03]
+                  transition-all
+                  duration-300
+                  hover:-translate-y-1
+                  hover:border-emerald-400/30
+                "
+              >
+                <div className="relative h-[260px] overflow-hidden border-b border-white/10">
+                  <Image
+                    src={project.image1}
+                    alt={project.repo_name}
+                    fill
+                    className="
+                      object-cover
+                      transition-transform
+                      duration-500
+                      group-hover:scale-105
+                    "
+                  />
+
+                  <div className="absolute inset-0 bg-black/40" />
+                </div>
+
+                <div className="p-7">
+                  <h2 className="text-3xl font-bold text-white">
+                    {project.repo_name}
+                  </h2>
+
+                  <p
+                    className="
+                      mt-5
+                      text-sm
+                      leading-relaxed
+                      text-neutral-400
+                    "
+                  >
+                    {project.repo_desc}
+                  </p>
+
+                  <div className="mt-8 flex items-center justify-between">
+                    <a
+                      href={project.repo_link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="
+                        rounded-2xl
+                        border
+                        border-emerald-400/20
+                        bg-emerald-400/10
+                        px-5
+                        py-3
+                        text-sm
+                        uppercase
+                        tracking-[0.2em]
+                        text-emerald-300
+                        transition-all
+                        duration-300
+                        hover:border-emerald-400/40
+                        hover:bg-emerald-400/20
+                      "
+                    >
+                      GitHub
+                    </a>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </main>
     </div>
   );
 }
-
