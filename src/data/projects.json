@@ -11,7 +11,7 @@
         "key":2,
         "repo_name": "Dashy",
         "repo_link": "https://github.com/adithya1770/dashy-web.git",
-        "repo_desc": "A web dashboard which displays various info from browser and includes a note taker",
+        "repo_desc": "A web dashboard with a windows 95 simulator and daily needed tools",
         "image1": "/dashy.png",
         "image2": "/dashy2.png"
     },

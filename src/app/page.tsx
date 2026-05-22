@@ -9,22 +9,14 @@ import Link from "next/link";
 
 import {
   SiReact,
-  SiNextdotjs,
   SiPandas,
   SiNodedotjs,
   SiPython,
-  SiC,
   SiCplusplus,
-  SiMongodb,
   SiPostgresql,
-  SiSupabase,
-  SiTailwindcss,
-  SiLinux,
-  SiSvelte,
   SiJavascript,
-  SiDocker,
   SiGit,
-  SiRedis
+  SiRedis,
 } from "react-icons/si";
 
 interface Project {
@@ -38,86 +30,64 @@ const technologies = [
   {
     name: "React",
     logo: <SiReact className="text-cyan-400 text-xl" />,
-  },
-
-  {
-    name: "Next.js",
-    logo: <SiNextdotjs className="text-white text-xl" />,
-  },
-
-  {
-    name: "JavaScript",
-    logo: <SiJavascript className="text-yellow-300 text-xl" />,
-  },
-
-  {
-    name: "Node.js",
-    logo: <SiNodedotjs className="text-green-500 text-xl" />,
+    description:
+      "Usually where most of my UI experiments start before turning into redesign chaos.",
   },
 
   {
     name: "Python",
     logo: <SiPython className="text-yellow-400 text-xl" />,
+    description:
+      "The language I use whenever I want to build something quickly or automate random ideas.",
   },
 
   {
-    name: "Pandas",
-    logo: <SiPandas className="text-white text-xl" />,
-  },
-
-  {
-    name: "C",
-    logo: <SiC className="text-blue-500 text-xl" />,
+    name: "JavaScript",
+    logo: <SiJavascript className="text-yellow-300 text-xl" />,
+    description:
+      "Half my projects somehow end up depending on JavaScript at some point.",
   },
 
   {
     name: "C++",
     logo: <SiCplusplus className="text-blue-400 text-xl" />,
+    description:
+      "Mostly for learning low-level concepts and making myself suffer productively.",
   },
 
   {
-    name: "MongoDB",
-    logo: <SiMongodb className="text-green-400 text-xl" />,
-  },
-
-  {
-    name: "PostgreSQL",
-    logo: <SiPostgresql className="text-sky-400 text-xl" />,
+    name: "Pandas",
+    logo: <SiPandas className="text-white text-xl" />,
+    description:
+      "Makes handling messy datasets feel slightly less painful than it actually is.",
   },
 
   {
     name: "Redis",
     logo: <SiRedis className="text-red-400 text-xl" />,
+    description:
+      "Started using it while experimenting with caching and realtime systems.",
   },
 
   {
-    name: "Supabase",
-    logo: <SiSupabase className="text-emerald-400 text-xl" />,
+    name: "Node.js",
+    logo: <SiNodedotjs className="text-green-500 text-xl" />,
+    description:
+      "Used in way too many backend experiments, APIs, and unfinished side projects.",
   },
 
   {
-    name: "TailwindCSS",
-    logo: <SiTailwindcss className="text-cyan-300 text-xl" />,
-  },
-
-  {
-    name: "Linux",
-    logo: <SiLinux className="text-yellow-300 text-xl" />,
-  },
-
-  {
-    name: "Svelte",
-    logo: <SiSvelte className="text-orange-400 text-xl" />,
-  },
-
-  {
-    name: "Docker",
-    logo: <SiDocker className="text-blue-400 text-xl" />,
+    name: "PostgreSQL",
+    logo: <SiPostgresql className="text-sky-400 text-xl" />,
+    description:
+      "The database I trust whenever projects start becoming serious.",
   },
 
   {
     name: "Git",
     logo: <SiGit className="text-orange-500 text-xl" />,
+    description:
+      "Mostly used for version control and occasionally recovering from terrible decisions.",
   },
 ];
 
@@ -135,6 +105,13 @@ export default function HomePage() {
 
     fetchProjects();
   }, []);
+
+  const featuredProjects = projects.filter(
+    (project) =>
+      project.repo_name === "DeepreefAI" ||
+      project.repo_name === "STiX Analysis Pipeline" ||
+      project.repo_name === "Dashy"
+  );
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-black text-white">
@@ -238,7 +215,7 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4">
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
               {technologies.map((tech, index) => (
                 <div
                   key={tech.name}
@@ -267,8 +244,7 @@ export default function HomePage() {
                   </h3>
 
                   <p className="mt-3 text-sm leading-relaxed text-neutral-500">
-                    Used in random experiments, projects, apps, or systems I’ve
-                    built over time.
+                    {tech.description}
                   </p>
                 </div>
               ))}
@@ -288,7 +264,7 @@ export default function HomePage() {
               "
             >
               Currently spending most of my time learning systems programming,
-              AI-related stuff, recommendation systems, and rebuilding old
+              ML research projects, recommendation systems, and rebuilding old
               projects cleaner than before.
             </div>
           </Container>
@@ -316,7 +292,7 @@ export default function HomePage() {
             </div>
 
             <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
-              {projects.slice(0, 3).map((project, index) => (
+              {featuredProjects.map((project, index) => (
                 <a
                   key={index}
                   href={project.repo_link}
@@ -334,29 +310,6 @@ export default function HomePage() {
                     hover:-translate-y-1
                   "
                 >
-                  <div className="mb-6 flex items-center justify-between">
-                    <span className="text-xs uppercase tracking-[0.2em] text-neutral-500">
-                      personal project
-                    </span>
-
-                    <span
-                      className="
-                        rounded-full
-                        border
-                        border-emerald-400/20
-                        bg-emerald-400/10
-                        px-3
-                        py-1
-                        text-[10px]
-                        uppercase
-                        tracking-[0.2em]
-                        text-emerald-300
-                      "
-                    >
-                      building
-                    </span>
-                  </div>
-
                   <h3 className="text-3xl font-bold text-white">
                     {project.repo_name}
                   </h3>
@@ -364,6 +317,25 @@ export default function HomePage() {
                   <p className="mt-5 text-sm leading-relaxed text-neutral-500">
                     {project.repo_desc}
                   </p>
+
+                  <div
+                    className="
+                      mt-8
+                      inline-flex
+                      rounded-2xl
+                      border
+                      border-emerald-400/20
+                      bg-emerald-400/10
+                      px-5
+                      py-3
+                      text-sm
+                      uppercase
+                      tracking-[0.2em]
+                      text-emerald-300
+                    "
+                  >
+                    View Project
+                  </div>
                 </a>
               ))}
             </div>
