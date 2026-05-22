@@ -10,7 +10,7 @@ import Link from "next/link";
 import {
   SiReact,
   SiNextdotjs,
-  SiMui,
+  SiPandas,
   SiNodedotjs,
   SiPython,
   SiC,
@@ -20,10 +20,11 @@ import {
   SiSupabase,
   SiTailwindcss,
   SiLinux,
-  SiFirebase,
-  SiTensorflow,
+  SiSvelte,
+  SiJavascript,
   SiDocker,
   SiGit,
+  SiRedis
 } from "react-icons/si";
 
 interface Project {
@@ -45,8 +46,8 @@ const technologies = [
   },
 
   {
-    name: "Material UI",
-    logo: <SiMui className="text-blue-400 text-xl" />,
+    name: "JavaScript",
+    logo: <SiJavascript className="text-yellow-300 text-xl" />,
   },
 
   {
@@ -57,6 +58,11 @@ const technologies = [
   {
     name: "Python",
     logo: <SiPython className="text-yellow-400 text-xl" />,
+  },
+
+  {
+    name: "Pandas",
+    logo: <SiPandas className="text-white text-xl" />,
   },
 
   {
@@ -80,6 +86,11 @@ const technologies = [
   },
 
   {
+    name: "Redis",
+    logo: <SiRedis className="text-red-400 text-xl" />,
+  },
+
+  {
     name: "Supabase",
     logo: <SiSupabase className="text-emerald-400 text-xl" />,
   },
@@ -95,13 +106,8 @@ const technologies = [
   },
 
   {
-    name: "Firebase",
-    logo: <SiFirebase className="text-orange-400 text-xl" />,
-  },
-
-  {
-    name: "TensorFlow",
-    logo: <SiTensorflow className="text-orange-500 text-xl" />,
+    name: "Svelte",
+    logo: <SiSvelte className="text-orange-400 text-xl" />,
   },
 
   {
