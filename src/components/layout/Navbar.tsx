@@ -30,6 +30,10 @@ const navItems = [
     label: "Updates",
     href: "/updates",
   },
+  {
+    label: "Threads",
+    href: "/threads",
+  },
 ];
 
 export default function Navbar() {

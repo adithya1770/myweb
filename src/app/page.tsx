@@ -171,8 +171,8 @@ export default function HomePage() {
                   text-neutral-500
                 "
               >
-                Currently exploring AI systems, recommendation engines,
-                low-level programming, full-stack development, and rebuilding
+                Currently exploring machine learning,
+                quirky cs concepts, full-stack development, and rebuilding
                 old projects properly instead of abandoning them halfway.
               </p>
 
