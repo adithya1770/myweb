@@ -122,7 +122,7 @@ export default function HomePage() {
       <div className="grid-background fixed inset-0 opacity-30" />
 
       <main className="relative z-10">
-        <section className="flex min-h-screen items-center pt-20">
+        <section className="flex min-h-screen items-center pt-17">
           <Container>
             <div className="max-w-5xl">
               <div className="mb-6 flex items-center gap-3">
