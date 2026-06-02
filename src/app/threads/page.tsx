@@ -11,16 +11,32 @@ interface Thread {
 }
 
 const WEATHER_EMOJIS: Record<string, string> = {
-  sunny: "☀️", cloudy: "☁️", rainy: "🌧️", stormy: "⛈️",
-  windy: "🌬️", foggy: "🌫️", snowy: "❄️", hot: "🥵",
-  cold: "🥶", breezy: "🍃",
+  sunny: "☀️",
+  cloudy: "☁️",
+  rainy: "🌧️",
+  stormy: "⛈️",
+  windy: "🌬️",
+  foggy: "🌫️",
+  snowy: "❄️",
+  hot: "🥵",
+  cold: "🥶",
+  breezy: "🍃",
 };
 
 function formatDate(iso: string) {
   const d = new Date(iso);
+
   return {
-    date: d.toLocaleDateString("en-US", { weekday: "short", year: "numeric", month: "short", day: "numeric" }),
-    time: d.toLocaleTimeString("en-US", { hour: "2-digit", minute: "2-digit" }),
+    date: d.toLocaleDateString("en-US", {
+      weekday: "short",
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    }),
+    time: d.toLocaleTimeString("en-US", {
+      hour: "2-digit",
+      minute: "2-digit",
+    }),
   };
 }
 
@@ -37,130 +53,201 @@ export default function ThreadsPage() {
   useEffect(() => {
     fetch("/api/threads")
       .then((r) => r.json())
-      .then((data) => { setThreads(data); setLoading(false); });
+      .then((data) => {
+        setThreads(data);
+        setLoading(false);
+      });
   }, []);
 
   async function post() {
     if (!content.trim()) return;
+
     setPosting(true);
     setError("");
+
     const res = await fetch("/api/threads", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ content, weather, secret }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        content,
+        weather,
+        secret,
+      }),
     });
+
     if (res.ok) {
-      const t = await res.json();
-      setThreads((prev) => [t, ...prev]);
-      setContent(""); setWeather(""); setShowForm(false);
+      const thread = await res.json();
+
+      setThreads((prev) => [thread, ...prev]);
+
+      setContent("");
+      setWeather("");
+      setShowForm(false);
     } else {
       const e = await res.json();
       setError(e.message || "Failed to post");
     }
+
     setPosting(false);
   }
 
   async function deleteThread(id: string) {
-    await fetch("/api/threads", {
+    const res = await fetch("/api/threads", {
       method: "DELETE",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ id, secret }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        id,
+        secret,
+      }),
     });
-    setThreads((prev) => prev.filter((t) => t._id !== id));
+
+    if (res.ok) {
+      setThreads((prev) => prev.filter((t) => t._id !== id));
+    }
   }
 
   return (
-  <Container>
-    <div className="max-w-3xl mx-auto py-24 px-6">
-      <div className="mb-20">
-        <p className="text-xs text-neutral-500 uppercase tracking-[0.3em] mb-4">
-          personal feed
-        </p>
+    <Container>
+      <div className="max-w-3xl mx-auto py-24 px-6">
+        <div className="mb-20">
+          <p className="text-xs text-neutral-500 uppercase tracking-[0.3em] mb-4">
+            personal feed
+          </p>
 
-        <h1 className="text-5xl font-bold tracking-tight text-white mb-6">
-          <span className="text-neutral-500">//</span> threads
-        </h1>
+          <h1 className="text-5xl font-bold tracking-tight text-white mb-6">
+            <span className="text-neutral-500">//</span> threads
+          </h1>
 
-        <p className="text-neutral-400 text-base leading-relaxed max-w-xl">
-          raw thoughts, moments, experiments, and things worth remembering.
-        </p>
-      </div>
+          <p className="text-neutral-400 text-base leading-relaxed max-w-xl">
+            raw thoughts, moments, experiments, and things worth remembering.
+          </p>
+        </div>
 
-      <div className="mb-16">
-        {!showForm ? (
-          <button
-            onClick={() => setShowForm(true)}
-            className="font-mono text-sm text-neutral-500 hover:text-white transition-colors"
-          >
-            &gt; new thought
-          </button>
+        <div className="mb-16">
+          {!showForm ? (
+            <button
+              onClick={() => setShowForm(true)}
+              className="font-mono text-sm text-neutral-500 hover:text-white transition-colors"
+            >
+              &gt; new thought
+            </button>
+          ) : (
+            <div className="border border-neutral-800 rounded-xl p-6 bg-neutral-950 space-y-4">
+              <textarea
+                value={content}
+                onChange={(e) => setContent(e.target.value)}
+                placeholder="what's on your mind?"
+                rows={5}
+                className="w-full bg-black border border-neutral-800 rounded-lg p-4 text-neutral-200 placeholder:text-neutral-600 outline-none resize-none focus:border-neutral-600"
+              />
+
+              <input
+                type="text"
+                value={weather}
+                onChange={(e) => setWeather(e.target.value)}
+                placeholder="weather (optional)"
+                className="w-full bg-black border border-neutral-800 rounded-lg p-3 text-neutral-200 placeholder:text-neutral-600 outline-none focus:border-neutral-600"
+              />
+
+              <input
+                type="password"
+                value={secret}
+                onChange={(e) => setSecret(e.target.value)}
+                placeholder="secret"
+                className="w-full bg-black border border-neutral-800 rounded-lg p-3 text-neutral-200 placeholder:text-neutral-600 outline-none focus:border-neutral-600"
+              />
+
+              {error && (
+                <p className="text-sm text-red-500">
+                  {error}
+                </p>
+              )}
+
+              <div className="flex gap-3">
+                <button
+                  onClick={post}
+                  disabled={posting}
+                  className="px-5 py-2 rounded-lg bg-white text-black hover:bg-neutral-200 transition disabled:opacity-50"
+                >
+                  {posting ? "posting..." : "publish"}
+                </button>
+
+                <button
+                  onClick={() => setShowForm(false)}
+                  className="px-5 py-2 rounded-lg border border-neutral-800 text-neutral-400 hover:text-white transition"
+                >
+                  cancel
+                </button>
+              </div>
+            </div>
+          )}
+        </div>
+
+        {loading ? (
+          <p className="text-neutral-600 text-sm">loading...</p>
+        ) : threads.length === 0 ? (
+          <p className="text-neutral-600 text-sm">no threads yet.</p>
         ) : (
-          <div className="border border-neutral-800 rounded-xl p-6 bg-neutral-950 space-y-4">
-            {/* existing form code */}
+          <div className="space-y-8">
+            {threads.map((t, i) => {
+              const { date, time } = formatDate(t.createdAt);
+
+              const weatherEmoji = t.weather
+                ? WEATHER_EMOJIS[t.weather.toLowerCase()] || "🌡️"
+                : null;
+
+              return (
+                <div
+                  key={t._id}
+                  className="group relative border-l border-neutral-800 pl-8 py-8 hover:border-neutral-600 transition-all"
+                >
+                  <div className="absolute left-[-5px] top-9 w-2 h-2 rounded-full bg-neutral-700 group-hover:bg-neutral-400 transition-all" />
+
+                  <div className="flex items-center gap-4 mb-4 flex-wrap">
+                    <span className="text-sm text-neutral-500 font-mono">
+                      {date}
+                    </span>
+
+                    <span className="text-sm text-neutral-700 font-mono">
+                      {time}
+                    </span>
+
+                    {weatherEmoji && (
+                      <span
+                        className="text-sm text-neutral-500"
+                        title={t.weather || ""}
+                      >
+                        {weatherEmoji} {t.weather}
+                      </span>
+                    )}
+
+                    <span className="text-xs text-neutral-800 font-mono ml-auto">
+                      #{String(threads.length - i).padStart(3, "0")}
+                    </span>
+                  </div>
+
+                  <p className="text-neutral-300 text-base leading-8 whitespace-pre-wrap">
+                    {t.content}
+                  </p>
+
+                  {secret && (
+                    <button
+                      onClick={() => deleteThread(t._id)}
+                      className="mt-4 text-xs text-neutral-700 hover:text-red-500 transition-all opacity-0 group-hover:opacity-100"
+                    >
+                      delete
+                    </button>
+                  )}
+                </div>
+              );
+            })}
           </div>
         )}
       </div>
-
-      {loading ? (
-        <p className="text-neutral-600 text-sm">loading...</p>
-      ) : threads.length === 0 ? (
-        <p className="text-neutral-600 text-sm">no threads yet.</p>
-      ) : (
-        <div className="space-y-8">
-          {threads.map((t, i) => {
-            const { date, time } = formatDate(t.createdAt);
-            const weatherEmoji = t.weather
-              ? WEATHER_EMOJIS[t.weather.toLowerCase()] || "🌡️"
-              : null;
-
-            return (
-              <div
-                key={t._id}
-                className="group relative border-l border-neutral-800 pl-8 py-8 hover:border-neutral-600 transition-all"
-              >
-                <div className="absolute left-[-5px] top-9 w-2 h-2 rounded-full bg-neutral-700 group-hover:bg-neutral-400 transition-all" />
-
-                <div className="flex items-center gap-4 mb-4 flex-wrap">
-                  <span className="text-sm text-neutral-500 font-mono">
-                    {date}
-                  </span>
-
-                  <span className="text-sm text-neutral-700 font-mono">
-                    {time}
-                  </span>
-
-                  {weatherEmoji && (
-                    <span
-                      className="text-sm text-neutral-500"
-                      title={t.weather || ""}
-                    >
-                      {weatherEmoji} {t.weather}
-                    </span>
-                  )}
-
-                  <span className="text-xs text-neutral-800 font-mono ml-auto">
-                    #{String(threads.length - i).padStart(3, "0")}
-                  </span>
-                </div>
-
-                <p className="text-neutral-300 text-base leading-8 whitespace-pre-wrap">
-                  {t.content}
-                </p>
-
-                {secret && (
-                  <button
-                    onClick={() => deleteThread(t._id)}
-                    className="mt-4 text-xs text-neutral-700 hover:text-red-500 transition-all opacity-0 group-hover:opacity-100"
-                  >
-                    delete
-                  </button>
-                )}
-              </div>
-            );
-          })}
-        </div>
-      )}
-    </div>
-  </Container>
-);
+    </Container>
+  );
 }

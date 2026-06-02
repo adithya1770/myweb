@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 import Navbar from "@/components/layout/Navbar";
 import Container from "@/components/layout/Container";
@@ -24,6 +25,7 @@ interface Project {
   repo_name: string;
   repo_desc: string;
   image1: string;
+  image2?: string;
 }
 
 const technologies = [
@@ -162,20 +164,6 @@ export default function HomePage() {
                 experimental, and sometimes useful software.
               </p>
 
-              <p
-                className="
-                  mt-4
-                  max-w-2xl
-                  text-base
-                  leading-relaxed
-                  text-neutral-500
-                "
-              >
-                Currently exploring machine learning,
-                quirky cs concepts, full-stack development, and rebuilding
-                old projects properly instead of abandoning them halfway.
-              </p>
-
               <div className="mt-10 flex flex-wrap gap-4">
                 <Link
                   href="/projects"
@@ -264,7 +252,7 @@ export default function HomePage() {
               "
             >
               Currently spending most of my time learning systems programming,
-              ML research projects, recommendation systems, and rebuilding old
+              ML research projects, and rebuilding old
               projects cleaner than before.
             </div>
           </Container>
@@ -292,24 +280,44 @@ export default function HomePage() {
             </div>
 
             <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
-              {featuredProjects.map((project, index) => (
-                <a
-                  key={index}
-                  href={project.repo_link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="
-                    rounded-3xl
-                    border
-                    border-white/10
-                    bg-white/[0.03]
-                    p-6
-                    transition-all
-                    duration-300
-                    hover:border-emerald-400/30
-                    hover:-translate-y-1
-                  "
-                >
+            {featuredProjects.map((project, index) => (
+              <a
+                key={index}
+                href={project.repo_link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="
+                  group
+                  overflow-hidden
+                  rounded-3xl
+                  border
+                  border-white/10
+                  bg-white/[0.03]
+                  transition-all
+                  duration-300
+                  hover:border-emerald-400/30
+                  hover:-translate-y-1
+                "
+              >
+                <div className="relative h-56 w-full overflow-hidden">
+                  <Image
+                    src={project.image1}
+                    alt={project.repo_name}
+                    fill
+                    className="object-cover transition-opacity duration-500 group-hover:opacity-0"
+                  />
+
+                  {project.image2 && (
+                    <Image
+                      src={project.image2}
+                      alt={project.repo_name}
+                      fill
+                      className="object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                    />
+                  )}
+                </div>
+
+                <div className="p-6">
                   <h3 className="text-3xl font-bold text-white">
                     {project.repo_name}
                   </h3>
@@ -336,9 +344,10 @@ export default function HomePage() {
                   >
                     View Project
                   </div>
-                </a>
-              ))}
-            </div>
+                </div>
+              </a>
+            ))}
+          </div>
           </Container>
         </section>
       </main>

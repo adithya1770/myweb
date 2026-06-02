@@ -12,6 +12,8 @@
     "@radix-ui/react-hover-card": "^1.1.5",
     "@radix-ui/react-label": "^2.1.2",
     "@radix-ui/react-slot": "^1.1.1",
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.6.1",
     "@studio-freight/lenis": "^1.0.42",
     "@tabler/icons-react": "^3.30.0",
     "class-variance-authority": "^0.7.1",
